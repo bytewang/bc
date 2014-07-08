@@ -60,7 +60,7 @@ function init()
      alert("请用Chrome 浏览器");
   }
    if(!localStorage["rightPrefix"]){
-     localStorage["rightPrefix"] = "http://dbl-wise-rc-tf22.vm.baidu.com:8808/?nocache=1&src=";
+     localStorage["rightPrefix"] = "http://m.baidu.com/l=3/tc?srd=1&dict=30&src=";
    }
 }
 function handleForm()
@@ -211,6 +211,7 @@ function getPage(url)
     
     uri = "http://m.baidu.com/news?tn=bdbody&src="+encodeURIComponent(url);
     middle.attr("src",uri);
+    alert(uri);
     //alert(left.attr("src"));
 
     var le = document.getElementById("lefttips");
