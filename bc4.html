@@ -206,10 +206,11 @@ function getPage(url)
             uri=localStorage["rightPrefix"]+encodeURIComponent(url);
         }
     }
-    right.attr("src",uri)
+    right.attr("src",uri);
     rightqr.attr("src",qr+encodeURIComponent(uri));
+    
     uri = "http://m.baidu.com/news?tn=bdbody&src="+encodeURIComponent(url);
-    middle.attr("src",uri)
+    middle.attr("src",uri);
     //alert(left.attr("src"));
 
     var le = document.getElementById("lefttips");
@@ -301,11 +302,7 @@ function getPage(url)
           <iframe id="middlewin" sandbox="allow-same-origin allow-forms allow-scripts"></iframe>    
           <iframe id="rightwin" sandbox="allow-same-origin allow-forms allow-scripts"></iframe>   
         </div>
-        <div id="myqr">
-          <img id="pcqr" onerror="reloadimg(this)" src="http://bytewang.duapp.com/qr.php">
-          <img id="leftqr" onerror="reloadimg(this)" src="http://bytewang.duapp.com/qr.php">
-          <img id="rightqr" onerror="reloadimg(this)" src="http://bytewang.duapp.com/qr.php">
-        </div>
+
         <div id="help"><pre>
           可能的窗口前缀： 
           搜索前端： http://m.baidu.com/l=3/tc?srd=1&dict=30&src=
