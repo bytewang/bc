@@ -211,12 +211,13 @@ function getPage(url)
     
     uri = "http://m.baidu.com/news?tn=bdbody&src="+encodeURIComponent(url);
     middle.attr("src",uri);
-    alert(uri);
+    
     //alert(left.attr("src"));
 
     var le = document.getElementById("lefttips");
     var la = document.getElementById("l1");
     var lda = document.getElementById("l2");
+    var lm = document.getElementById("l3");
 
     var re = document.getElementById("righttips");
     var ra = document.getElementById("r1");
@@ -224,9 +225,9 @@ function getPage(url)
     var pctips = document.getElementById("pctips");
     pctips.innerHTML="<input class='bt' type='button' onclick=openURL('"+url+"') value=' pc 页面 ' ></input>";
     le.innerHTML="中间窗口前缀: " + localStorage["leftPrefix"];
-    la.innerHTML="<input class='bt' type='button' onclick=openURL('"+left.attr("src")+"') value=' 中间窗口 ' ></input>";
+    la.innerHTML="<input class='bt' type='button' onclick=openURL('"+left.attr("src")+"') value=' 左二窗口 ' ></input>";
     lda.innerHTML="<input class='bt' type='button' onclick=openURL('"+localStorage["leftDataPrefix"] + encodeURIComponent(url)+"') value=' 中间窗口json数据 ' ></input>";
-    
+    lm.innerHTML="<input class='bt' type='button' onclick=openURL('"+middle.attr("src")+"') value=' 左三窗口 ' ></input>";
     document.getElementById("currenturl").innerHTML=url;
       
 
@@ -289,6 +290,7 @@ function getPage(url)
         <div id="infoTip">
             <span id="l1">可以用鼠标动态的改变下面3个窗口的大小</span>
             <span id="l2"></span>
+            <span id="l3"></span>
             <span id="lefttips"></span>
             
             </br>
