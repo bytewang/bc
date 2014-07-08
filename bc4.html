@@ -176,6 +176,7 @@ function getPage(url)
     var pc = $("#pcwin");
     var left = $("#leftwin");
     var right = $("#rightwin");
+    var middle = $("middlewin");
     var pcqr = $("#pcqr");
     var leftqr = $("#leftqr");
     var rightqr = $("#rightqr");
@@ -207,6 +208,8 @@ function getPage(url)
     }
     right.attr("src",uri)
     rightqr.attr("src",qr+encodeURIComponent(uri));
+    uri = "http://m.baidu.com/news?tn=bdbody&src="+encodeURIComponent(url);
+    middle.attr("src",uri)
     //alert(left.attr("src"));
 
     var le = document.getElementById("lefttips");
@@ -294,8 +297,9 @@ function getPage(url)
         </div></br>
         <div id="myiframe">          
           <iframe id="pcwin"  sandbox="allow-same-origin allow-forms allow-scripts"></iframe>      
-          <iframe id="leftwin"></iframe>
-          <iframe id="rightwin" ></iframe>       
+          <iframe id="leftwin" sandbox="allow-same-origin allow-forms allow-scripts"></iframe>
+          <iframe id="middlewin" sandbox="allow-same-origin allow-forms allow-scripts"></iframe>    
+          <iframe id="rightwin" sandbox="allow-same-origin allow-forms allow-scripts"></iframe>   
         </div>
         <div id="myqr">
           <img id="pcqr" onerror="reloadimg(this)" src="http://bytewang.duapp.com/qr.php">
