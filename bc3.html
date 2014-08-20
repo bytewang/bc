@@ -218,7 +218,9 @@ function getPage(url)
     var ra = document.getElementById("r1");
     var rda = document.getElementById("r2");
     var pctips = document.getElementById("pctips");
+    var apply_news = document.getElementById("applynews");
     pctips.innerHTML="<input class='bt' type='button' onclick=openURL('"+url+"') value=' pc 页面 ' ></input>";
+    apply_news.innerHTML="<input class='bt' type='button' onclick=openURL('"+left.attr("src")+"&nextpage=1&recache=1') value=' 强制正文页 ' ></input>";
     le.innerHTML="中间窗口前缀: " + localStorage["leftPrefix"];
     la.innerHTML="<input class='bt' type='button' onclick=openURL('"+left.attr("src")+"') value=' 中间窗口 ' ></input>";
     lda.innerHTML="<input class='bt' type='button' onclick=openURL('"+left.attr("src")+"&tc_source=1') value=' 中间窗口json数据 ' ></input>";
@@ -287,6 +289,7 @@ function getPage(url)
             <span id="r1"></span>
             <span id="r2"> </span>
             <span id="pctips"></span>
+            <span id="applynews"></span>
             <span id="righttips"></span>
         </div></br>
         <div id="myiframe">          
