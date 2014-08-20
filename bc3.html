@@ -221,7 +221,7 @@ function getPage(url)
     pctips.innerHTML="<input class='bt' type='button' onclick=openURL('"+url+"') value=' pc 页面 ' ></input>";
     le.innerHTML="中间窗口前缀: " + localStorage["leftPrefix"];
     la.innerHTML="<input class='bt' type='button' onclick=openURL('"+left.attr("src")+"') value=' 中间窗口 ' ></input>";
-    lda.innerHTML="<input class='bt' type='button' onclick=openURL('"+localStorage["leftDataPrefix"] + encodeURIComponent(url)+"') value=' 中间窗口json数据 ' ></input>";
+    lda.innerHTML="<input class='bt' type='button' onclick=openURL('"+left.attr("src")+&tc_source=1"') value=' 中间窗口json数据 ' ></input>";
     
     document.getElementById("currenturl").innerHTML=url;
       
@@ -253,12 +253,8 @@ function getPage(url)
     <body id="mybody" onload="init()">
         <div id="setInfo">
             <input type="button" onclick="toggleInput()" value="批量导入 PC URL" class="bt"/>
-
             <input type="button" onclick="setPrefix('left',1)" value="设置中间窗口前缀" class="bt"> </input>
             <input type="button" onclick="setPrefix('right',1)" value="设置右边窗口前缀" class="bt"></input>
-
-            <input type="button" onclick="setPrefix('left',2)" value="设置中间数据前缀" class="bt"> </input>
-            <input type="button" onclick="setPrefix('right',2)" value="设置右边数据前缀" class="bt"></input>
             <a href=#help> 帮助</a>
             url: <span id="currenturl"></span>
         </div>
