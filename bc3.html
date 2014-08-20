@@ -228,7 +228,7 @@ function getPage(url)
 
     re.innerHTML="右边窗口前缀: " + localStorage["rightPrefix"];  
     ra.innerHTML="<input class='bt' type='button' onclick=openURL('"+right.attr("src")+"') value=' 右边窗口 ' ></input>";
-    rda.innerHTML="<input class='bt' type='button' onclick=openURL('"+localStorage["rightDataPrefix"] + encodeURIComponent(url)+"') value=' 右边窗口json数据 ' ></input>";
+    rda.innerHTML="<input class='bt' type='button' onclick=openURL('"+right.attr("src")+"&tc_source=1') value=' 右边窗口json数据 ' ></input>";
    
   
 }
