@@ -112,10 +112,10 @@ function displayHistoryPrefix()
     if(!localStorage["history_prefix"]){
         localStorage["history_prefix"]="";
         if(localStorage["leftPrefix"]){
-            localStorage["history_prefix"] += localStorage["leftPrefix"]+";";
+            localStorage["history_prefix"] += localStorage["leftPrefix"];
         }
         if(localStorage["rightPrefix"]){
-            localStorage["history_prefix"] += localStorage["rightPrefix"]+";";
+            localStorage["history_prefix"] += localStorage["rightPrefix"];
         }
     }
     if(!localStorage["history_prefix"]){
