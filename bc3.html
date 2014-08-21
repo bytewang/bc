@@ -97,8 +97,30 @@ function setPrefix(side,flag)
         }
        prefix = prefix.replace(/\s+/g,"");
        localStorage[index] = prefix;
+       if(!localStorage["history_prefix"]){
+           localStorage["history_prefix"] = prefix;
+       }else if(localStorage["history_prefix"].indexOf(prefix) == -1){
+           localStorage["history_prefix"]+=prefix;
+           localStorage["history_prefix"]+=";";
+       }
     }
    
+}
+
+function displayHistoryPrefix()
+{
+    if(!localStorage["history_prefix"]){
+        localStorage["history_prefix"]="";
+        if(!localStorage["leftPrefix"]){
+            localStorage["history_prefix"] += localStorage["leftPrefix"]+";";
+        }
+        if(!localStorage["rightPrefix"]){
+            localStorage["history_prefix"] += localStorage["rightPrefix"]+";";
+        }
+    }
+    if(!localStorage["history_prefix"]){
+        alert(localStorage["history_prefix"]);
+    }
 }
 
 function insertOption(optionArr)
@@ -257,6 +279,7 @@ function getPage(url)
             <input type="button" onclick="toggleInput()" value="批量导入 PC URL" class="bt"/>
             <input type="button" onclick="setPrefix('left',1)" value="设置中间窗口前缀" class="bt"> </input>
             <input type="button" onclick="setPrefix('right',1)" value="设置右边窗口前缀" class="bt"></input>
+            <input type="button" onclick="displayHistoryPrefix()" value="窗口历史前缀" class="bt"></input>
             <a href=#help> 帮助</a>
             url: <span id="currenturl"></span>
         </div>
