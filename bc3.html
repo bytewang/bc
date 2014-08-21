@@ -112,14 +112,19 @@ function displayHistoryPrefix()
     if(!localStorage["history_prefix"]){
         localStorage["history_prefix"]="";
         if(localStorage["leftPrefix"]){
-            localStorage["history_prefix"] += localStorage["leftPrefix"];
+            localStorage["history_prefix"] += localStorage["leftPrefix"]+";";
         }
         if(localStorage["rightPrefix"]){
-            localStorage["history_prefix"] += localStorage["rightPrefix"];
+            localStorage["history_prefix"] += localStorage["rightPrefix"]+";";
         }
     }
     if(localStorage["history_prefix"]){
-        alert(localStorage["history_prefix"]);
+        t = localStorage["history_prefix"].split(/";"/);
+        for(i in t){
+
+        }
+        document.getElementById("currenturl").innerHTML=localStorage["history_prefix"];
+       
     }
 }
 
